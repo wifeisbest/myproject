@@ -2,14 +2,14 @@ const contentPost = require('../models/Content');
 const {one} = require('../../until/mongoose')
 const {muti} = require('../../until/mongoose')
 
-class SiteController {
-    home(req, res ,next){
-        res.render('home',{title})
+class Javascript {
+    index(req,res,next){
+        res.render('java/index')
     }
-     
+    
 }
 
 
 
 
-module.exports = new SiteController;
+module.exports = new Javascript;

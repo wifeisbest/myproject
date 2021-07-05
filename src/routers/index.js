@@ -1,8 +1,16 @@
-const siteHome = require('./home')
+const siteHome  = require('./home');
+const node      = require('./node');
+const java      = require('./java');
+const css       = require('./css');
+const html      = require('./html');
 
 
 
 function router (app){
+    app.use('/javascript',java)
+    app.use('/html',html)
+    app.use('/cacadin',css)
+    app.use('/node',node);
     app.use('/',siteHome);
 }
 

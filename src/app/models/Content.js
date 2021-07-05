@@ -6,10 +6,9 @@ const slug = require('mongoose-slug-generator');
 const Schema = mongoose.Schema;
 
 const Atical = new Schema({
-    content: { type: String  },
-
-    
-    
+    title: {type: String},
+    content: { type: String  }
+   
   },{
     timestamps: true,
   });
