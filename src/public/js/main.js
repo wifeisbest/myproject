@@ -5,6 +5,7 @@ const showMenu = (toggId,navId) =>{
     if(toggle && navId){
         toggle.addEventListener('click',()=>{
             nav.classList.toggle('show')
+           
         })
     }
 }
@@ -24,3 +25,4 @@ function linkAction () {
 }
 
 navLink.forEach(n => n.addEventListener('click',linkAction));
+
