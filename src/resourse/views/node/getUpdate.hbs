@@ -1,0 +1,19 @@
+<h1 class="panel__h1">Panel nodejs</h1>
+
+
+<form action="/node/{{post._id}}?_method=PUT" method="POST" class="panel__form">
+    <div class="form__ground">
+        <label for="title">Title</label>
+        <textarea name="title"  id="text1"  rows="10">{{post.title}}</textarea>
+    </div>
+    <div class="form__ground">
+        <label for="description">Description</label>
+        <textarea name="description"  id="text2"  rows="10">{{post.description}}</textarea>
+    </div>
+    <div class="form__ground">
+        <label for="detail">Detail</label>
+        <textarea name="detail" id="text3"  rows="10">{{post.detail}}</textarea>
+    </div>
+    
+    <button type="submit">Update</button>
+</form>

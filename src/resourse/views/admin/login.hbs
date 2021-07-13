@@ -1,17 +1,50 @@
 <div class="admin">
-
     <h1 class="admin__heading"> WelCome Boss</h1>
-    <form action="/duong/login" method="POST" class="admin__form">
+    <form  id="admin__form" class="admin__form"  >
         <div class="form__groud">
             <label for="admin" class="admin__label">Admin</label>
-            <input type="text" class="admin__input" name="admin">
+            <input type="text" class="admin__input" id="admin" name="admin">
         </div>
         <div class="form__groud">
             <label for="admin" class="admin__label">PassWord</label>
-            <input type="password" class="admin__input" name="password">
+            <input type="password" name="password" id="password" class="admin__input" autocomplete="off">
         </div>
             
         <button class="button1 button" type="submit">Login</button>
     </form>
      
 </div>
+
+<script>
+    const form = document.getElementById('admin__form');
+    form.addEventListener('submit',registerToken);
+    async function registerToken(e){
+        e.preventDefault();
+        
+        const result = await fetch('/duong/login',{
+            method: 'POST',
+            headers:{
+                'Content-Type': 'application/json'
+            },           
+            body: JSON.stringify({
+                name: document.getElementById('admin').value,
+                password: document.getElementById('password').value
+            })
+        })
+        .then((res) => res.json())
+        .catch((err)=>{ console.log(err)})
+
+        if(result){
+            
+           setCookie('token', result.data,1)
+           window.location.href = "/";
+        }        
+    }
+
+    function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays*24*60*60*1000));
+        var expires = "expires="+ d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+</script>

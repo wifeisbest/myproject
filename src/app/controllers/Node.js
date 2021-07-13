@@ -1,3 +1,5 @@
+
+
 const nodejs = require('../models/Nodejs');
 const {one} = require('../../until/mongoose')
 const {muti} = require('../../until/mongoose')
@@ -43,7 +45,20 @@ class Node {
             }))
             .catch(next);
     }
-    
+    // get update
+    async getUpdate(req, res, next){
+        await nodejs.findById(req.params.id)
+            .then(post => res.render('node/getUpdate',{
+                post : one(post)
+            }))
+            .catch(next);        
+   }
+   //put update
+   async putUpdate(req, res, next){
+     await nodejs.updateOne({_id: req.params.id}, req.body)
+        .then(()=> res.redirect('/node'))
+        .catch(next)        
+    }
 }
 
 

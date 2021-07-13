@@ -1,8 +1,9 @@
 {{#each posts}}
 
-    
+    <a href="/node/update/{{this._id}}">Edit</a>
+    <a href="/node/delete/{{this._id}}">Delete</a>
     <h1>{{this.title}}</h1> 
-    <p>{{this.description}}</p>
+    <h5>{{this.description}}</h5>
     <p>{{this.detail}}</p>
 
 

@@ -1,3 +1,5 @@
+const veryfy    = require('../midleware/veryfyToken')
+
 const siteHome  = require('./home');
 const node      = require('./node');
 const java      = require('./java');
@@ -7,7 +9,7 @@ const admin     = require('./admin');
 
 
 function router (app){
-    app.use('/duong',admin);
+    app.use('/duong',veryfy, admin);
 
     app.use('/javascript',java)
     app.use('/html',html)

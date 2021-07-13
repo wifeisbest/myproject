@@ -1,3 +1,5 @@
+const jwt       = require('jsonwebtoken');
+
 const Ad        = require('../models/Admin');
 const bcrypt    = require('bcryptjs');
 
@@ -8,25 +10,25 @@ class Admin {
     adminLogin(req, res, next){
         res.render('admin/login')
     }
-    async registed(req,res,next){
-        try {           
-            const admin = await Ad.create(req.body);
-            res.render('admin/login')
+    async registed(req,res,next){    
 
-        } catch (error) {
-            res.json(error)
-        }
+        await Ad.create(req.body)
+            .then( () => { res.render('admin/login') })
+            .catch(next)             
     }
     async  login(req, res, next) {
         try {
             
-            const user = await Ad.findOne({admin: req.body.admin});
+            const user = await Ad.findOne({admin: req.body.name});
+            
             if(!user){
                 res.send('user not found')
             }
             if(bcrypt.compareSync(req.body.password, user.password)){
-             
-                res.send('duong')
+                const token = jwt.sign({admin: user._id},process.env.APP_SECRET);
+                res.json({
+                    data: token
+                })
              
             }else{
                 res.send('password is correct')
@@ -36,6 +38,7 @@ class Admin {
            console.log(error)
         }
     }
+    
 }
 
 

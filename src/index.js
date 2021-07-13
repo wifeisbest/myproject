@@ -7,12 +7,12 @@ const port               = process.env.PORT || 3000;
 const hdbs               = require('express-handlebars');
 const path               = require('path');
 const methodOverride     = require('method-override');
-
-
+const morgan             = require('morgan');
+const cookieParser       = require('cookie-parser') ;  
 
 // ============== =============\\
 
-app.use(express.static(path.join(__dirname,'public')));
+app.use(express.static(path.join(__dirname,'/public')));
 app.engine('.hbs',hdbs({
     extname: '.hbs'  
 }));
@@ -20,10 +20,11 @@ app.use(express.urlencoded({
     extended: true
 }));
 app.use(express.json());
+app.use(cookieParser())
 app.set('view engine','.hbs');
 app.set('views',path.join(__dirname, 'resourse','views'));
 app.use(methodOverride('_method'));
-
+app.use(morgan('combined'));
 // =========== Require local file================\\
 const Router = require('./routers')
 const db= require('./config/db');
