@@ -9,6 +9,7 @@ const Css = new Schema({
     title: {type: String},
     description: { type: String  },
     detail: { type: String  },
+    src: { type: String  },
     slug: { type :String, slug: 'title', unique: true}
   },{
     timestamps: true,

@@ -4,7 +4,7 @@ const {muti} = require('../../until/mongoose')
 
 class SiteController {
     home(req, res ,next){
-        res.render('home')
+        res.render('home',{layout: 'home'})
     }
     
 }

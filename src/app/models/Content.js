@@ -8,7 +8,7 @@ const Schema = mongoose.Schema;
 const Atical = new Schema({
     title: {type: String},
     content: { type: String  },
-    slug: { type :String, slug: 'name', unique: true}
+    slug: { type :String, slug: 'title', unique: true}
   },{
     timestamps: true,
   });
