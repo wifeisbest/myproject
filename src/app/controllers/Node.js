@@ -10,7 +10,9 @@ class Node {
         try {
              const posts = await nodejs.find({})
                 .then(posts => res.render('node/index',{
-                    posts: muti(posts)
+                    posts: muti(posts),
+                    style: 'node.css',
+                    title : 'Nodejs - Nền tảng tạo nên blog'
                 }))
                 .catch(next);
 
@@ -21,7 +23,8 @@ class Node {
     async showDetail(req, res, next){
         await nodejs.findOne({slug: req.params.slug})
             .then(post => res.render('node/showDetail',{
-                post: one(post)
+                post: one(post),
+                title: post.title
             }))
             .catch(next);
     }

@@ -4,7 +4,9 @@ const {muti} = require('../../until/mongoose')
 
 class Css {
     index(req,res,next){
-        res.render('cs/index')
+        res.render('cs/index',{
+            style: ''
+        })
     }
     
 }

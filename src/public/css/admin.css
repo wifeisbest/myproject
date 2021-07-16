@@ -1,0 +1,27 @@
+/* Admin */
+.admin{
+    margin: 80px 0 150px 0;
+    text-align: center;
+}
+
+.admin__form{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: var(--mb-3) 0;
+    flex-direction: column;
+    text-align: left;
+}
+.admin__label{
+    display: block;
+    margin: var(--mb-2) 0;
+}
+.admin__input{
+    display: block;
+    height: var(--mb-5);
+}
+.button1{
+    margin-top: var(--mb-3);
+}
+

@@ -1,21 +1,16 @@
-<section class="homepage">
-    
-    <h1 class="home__h1">Tất tần tật về NodeJs</h1>
-        
- {{#each posts}}   
-    
-        <article class="home__article">
-            <a href="/node/{{this.slug}}" target="_blank">
-                <h1> {{this.title}}</h1>
-                <div class="wrap">
-                    <div class="atical__img" style="background-image: url('http://localhost:3000/img/{{this.src}}.png');"></div>
-                    <p class="new">{{this.description}}</p>
-                </div>
-                
-                
+
+
+<section class="section">    
+    {{#each posts}}
+     <article class="section__article">
+            <a href="/node/{{this.slug}}" target="_blank" >
+                <h1 class="section__title"> {{this.title}} </h1>
+                <div class="section__wrap">                                                                                                                     
+                    <p class="section__description"> 
+                        <img src="/img/{{this.src}}.png" class="section__img" alt="">{{this.description}}
+                    </p>                   
+                </div>                                
             </a>
         </article>
- 
-        
     {{/each}}
 </section>

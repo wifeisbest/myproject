@@ -5,10 +5,14 @@ const bcrypt    = require('bcryptjs');
 
 class Admin {
     index(req,res,next){
-        res.render('admin/register')
+        res.render('admin/register',{
+            style: 'admin.css'
+        })
     }
     adminLogin(req, res, next){
-        res.render('admin/login')
+        res.render('admin/login',{
+            style: 'admin.css'
+        })
     }
     async registed(req,res,next){    
 

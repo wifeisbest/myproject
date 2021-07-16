@@ -6,11 +6,12 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700;900&display=swap" rel="stylesheet">
-        
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700;900&display=swap" rel="stylesheet">
+                
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="/css/main.css"> 
-    <title>Document</title>
+    <link rel="stylesheet" href="/css/main.css" > 
+    <link rel="stylesheet" href="/css/{{style}}" > 
+    <title>{{title}}</title>
     
 </head>
 <body>
@@ -34,16 +35,18 @@
         </nav>
     </header> 
     <div class="banner">
-        <h1 class="banner__heading">
+        <a href="/" class="banner_link">
+            <h1 class="banner__heading">
             
                 Blog Của 1 Người Tay Ngang 
             <span class="banner__heading-description">
                 Là nơi tôi chia sẻ mọi thứ tôi biết để làm nên blog này
             </span>
         </h1>
+        </a>
     </div>
     <main class="l-main">
-        <section class="bd-grid home">
+        <section class="bd-grid ">
              {{{body}}}
         </section>
         
@@ -57,5 +60,6 @@
         <p>&#169; 2021 copyright all reserved</p>
     </footer>
     <script src="/js/main.js"></script>
+    
 </body>
 </html>

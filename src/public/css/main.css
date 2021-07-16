@@ -5,17 +5,17 @@
     --font-medium: 700;
     --second-color: rgb(226, 14, 14);
     --three-color: #3d3c3c;
-    --body-font : 'Poppins', sans-serif;
+    --body-font : 'Roboto Slab', serif;
     --big-fontsize : 2rem;
     --h2-fontsize : 1.12rem;
     --normal-fontsize: 0.938rem;
 
-    --mb-1: 0.5rem;
-    --mb-2: 1rem;
-    --mb-3: 1.5rem;
-    --mb-4: 2rem;
-    --mb-5: 2.5rem;
-    --mb-6: 3rem;
+    --mb-1: 0.5rem; /*8*/
+    --mb-2: 1rem;   /*16*/
+    --mb-3: 1.5rem; /*24*/
+    --mb-4: 2rem;   /*32*/
+    --mb-5: 2.5rem; /*40*/
+    --mb-6: 3rem;   /*48*/
     
 }
 @media screen and (min-width : 768px){
@@ -54,11 +54,42 @@ a{
     color: var(--three-color);
     display: block;
 }
+
 /* class css */
 .section{
-    padding-top: 3rem;
-    padding-bottom: 2rem;
+    margin-top: var(--mb-6);
 }
+.section__title{
+    padding-top: var(--mb-3);
+    font-size: 27px;
+    color: #222222;
+}
+.section__title:hover{
+    color: var(--second-color);
+    opacity: 0.8;
+}
+.section__article{  
+    border-bottom: 1px dashed #d1cccc;  
+}
+.section__wrap{
+    padding: var(--mb-4) 0;
+    margin: var(--mb-2) 0;
+}
+.section__description{
+    display: flex;
+    line-height: 35px;
+    font-size: 20px;
+    color: #131313;
+    font-weight: 300;
+}
+.section__img{
+    width: 140px;
+    margin-right: var(--mb-4);
+    border-radius: var(--mb-1);
+    
+}
+
+
 /* layout */
 .bd-grid{
     max-width: 750px;
@@ -105,7 +136,7 @@ a{
     width: 100%;
     height: 0.18rem;
     left: 0;
-    top: 2rem;
+    top: 2.5rem;
     background-color: var(--second-color);
 }
 .nav__logo{
@@ -184,87 +215,12 @@ a{
     font-weight: 100;
     padding-top: var(--mb-5);
 }
-/* Home page */
-.homepage{
-    margin: var(--mb-4) 0;
-}
-.home__h1{
-    font-size: var(--big-fontsize);
-    margin-bottom: var(--mb-3);
-}
-.home__content{
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
-    margin-top: var(--mb-6);   
-}
-.home__depcs{
-    line-height: 35px;
-    font-size: 20px;
-    padding-left: var(--mb-3);
-}
-
-.home__heading{
-    font-size: var(--h2-fontsize);
-}
-.home__article{
-    padding: var(--mb-1) 0 var(--mb-6) 0;
-    border-bottom: 1px dotted #13131330;
-    margin-bottom: var(--mb-3);
-}
-.home__img{
-    width: 600px;
-    height: 154px;
-    border-radius: 8px;
-}
-
-/* Admin */
-.admin{
-    margin: 80px 0 150px 0;
-    text-align: center;
-}
-
-.admin__form{
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: var(--mb-3) 0;
-    flex-direction: column;
-    text-align: left;
-}
-.admin__label{
-    display: block;
-    margin: var(--mb-2) 0;
-}
-.admin__input{
-    display: block;
-    height: var(--mb-5);
-}
-.button1{
-    margin-top: var(--mb-3);
-}
 
 
 
-/* new */
-.atical__img{
-    height: 154px;
-    width: 166px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    border-radius: 8px;
-    flex-shrink: 0;
-}
-.wrap{
-    display: flex;
-    margin-top: 32px;
-}
-.new{
-    padding: 32px;
-   
-}
+
+
+
 
 
 
@@ -344,36 +300,23 @@ a{
     .nav{
         max-width: 100%;
     }
-    .home__h1{
-        font-size: 1.5rem;
-    }
-
-    /* home */
-    .home__content {
-        display: block;
-        /* justify-content: space-between; */
-        /* align-items: center; */
-        margin-top: var(--mb-4);
-        
-    }
-    .home__img {
-        /* width: 600px; */
-        height: 93px;
-        border-radius: 8px;
-        max-width: 29%;
-        float: left;
-        margin-right: var(--mb-2);
-    }
-    .home__depcs{
-        line-height: 33px;
+    .section{
+        margin: 0;
+    }  
+    .section__description{
+        display: inline;    
+        line-height: 25px;
         font-size: 16px;
-        display: inline;
-        padding-left: 0;
+        color: #131313;
     }
-    .home__heading{
-        font-size: var(--big-fontsize);
-        line-height: 3rem;
+    .section__img{
+        float: left;
+        margin-right: 16px;
+        width: 100px;
+        height: 79px;
     }
+    
+    
 }
 .show{
     right: 0;

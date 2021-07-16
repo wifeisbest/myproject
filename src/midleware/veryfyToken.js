@@ -6,7 +6,7 @@ function verifyToken (req, res, next){
     const token = req.cookies.token;
     
     if(token === undefined){
-        res.redirect('/')
+        res.redirect('login')
     }
     
     const {userId} = jwt.verify(token, process.env.APP_SECRET);
