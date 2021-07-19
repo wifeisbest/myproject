@@ -1,0 +1,36 @@
+body{
+    background-color: #00b5fe;
+}
+.page__404{
+    text-align: center;
+    margin-top: 5rem;
+}
+img{
+    width: 750px;  
+}
+.page__404 h1{
+    font-size: 3rem;
+    
+}
+.page__404 p{
+    font-size: 1.5rem;
+    
+}
+a{
+    text-decoration: none;
+    color:red;
+    padding: 8px 0;
+}
+.span{
+    font-size: 1.5rem;
+    
+}
+.danger{
+    color: red;
+    
+}
+@media screen and (max-width : 768px){
+    .page__404{
+        margin-top: 1rem;
+    }
+}

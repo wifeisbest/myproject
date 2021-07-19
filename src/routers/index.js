@@ -10,7 +10,7 @@ function router (app){
     app.use('/',posts);
     
     
-   
+    
 }
 
 module.exports = router;
