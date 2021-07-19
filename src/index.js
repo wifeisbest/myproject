@@ -12,24 +12,29 @@ const cookieParser       = require('cookie-parser') ;
 
 // ============== =============\\
 
-app.use(express.static(path.join(__dirname,'/public')));
 app.engine('.hbs',hdbs({
     extname: '.hbs'  
 }));
-app.use(express.urlencoded({
-    extended: true
-}));
-app.use(express.json());
-app.use(cookieParser())
 app.set('view engine','.hbs');
 app.set('views',path.join(__dirname, 'resourse','views'));
 app.use(methodOverride('_method'));
+app.use(express.json());
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname,'public')));
 app.use(morgan('combined'));
+app.use(express.urlencoded({
+    extended: true
+}));
+
+
 // =========== Require local file================\\
+
 const Router = require('./routers')
+Router(app);
+
 const db= require('./config/db');
 db.connect();
-Router(app);
+
 
 
 

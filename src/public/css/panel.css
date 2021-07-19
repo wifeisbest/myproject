@@ -46,8 +46,12 @@ img{
     height: auto;
 }
 /* layout */
-
-
+.one{
+    margin-top: var(--mb-6);
+}
+.one__heading{
+    margin: var(--mb-3) ;
+}
 
 
 
@@ -78,5 +82,17 @@ label{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: var(--mb-1) 0 ;
+    margin: var(--mb-2) 0 ;
+}
+#title, #src, #category{
+    width: 1024px;
+    height: 30px;
+}
+#description{
+    width: 1024px;
+    height: 69px;
+}
+#detail{
+    width: 1024px;
+    height: 300px;
 }

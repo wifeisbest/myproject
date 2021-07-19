@@ -1,4 +1,4 @@
-const contentPost = require('../models/Content');
+const Posts = require('../models/Posts');
 const {one} = require('../../until/mongoose')
 const {muti} = require('../../until/mongoose')
 

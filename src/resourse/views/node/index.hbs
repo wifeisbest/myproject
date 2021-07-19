@@ -3,8 +3,8 @@
 <section class="section">    
     {{#each posts}}
      <article class="section__article">
-            <a href="/node/{{this.slug}}" target="_blank" >
-                <h1 class="section__title"> {{this.title}} </h1>
+            <a href="/{{this.slug}}"  >
+                <h1 class="section__title marginTop"> {{this.title}} </h1>
                 <div class="section__wrap">                                                                                                                     
                     <p class="section__description"> 
                         <img src="/img/{{this.src}}.png" class="section__img" alt="">{{this.description}}

@@ -1,0 +1,11 @@
+
+
+<div class="one">
+    {{#each posts}}
+
+        <a href="/post/{{this._id}}">Edit</a>
+        <a href="/node/delete/{{this._id}}">Delete</a>
+        <h1 class="one__heading">{{this.title}}</h1>  
+
+    {{/each}}
+</div>
