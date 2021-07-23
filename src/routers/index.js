@@ -5,7 +5,7 @@ const admin     = require('./admin');
 
 
 function router (app){
-    app.use('/duong',veryfy, admin);
+    app.use('/duong', admin);
 
     app.use('/',posts);
     

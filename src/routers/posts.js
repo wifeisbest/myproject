@@ -6,6 +6,11 @@ const guest = require('../app/controllers/Guest');
 
 
 router.get('/aboutme',guest.aboutme);
+// show one page
+router.get('/sorting-trong-mongodb',posts.showone)
+
+
+
 
  
 router.get('/createPost', posts.createPost);

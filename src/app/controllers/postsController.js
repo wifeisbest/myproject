@@ -6,7 +6,7 @@ class PostController {
 
     async home(req,res,next){
         try {
-             const posts = await Posts.find({})
+             const posts = await Posts.find().sort({'src': -1})
                 .then(posts => res.render('home',{
                     posts: muti(posts),
                     style: 'home.css',
@@ -21,7 +21,7 @@ class PostController {
     }
     // show all Post with category Nodejs
     async postsNode(req,res,next){
-      const categoryNode = await Posts.find({category : 'nodejs'})
+      const categoryNode = await Posts.find({category : 'nodejs'}).sort({'src': -1})
             .then(posts =>{res.render('node/index',{
                 posts: muti(posts)
             })})
@@ -30,7 +30,7 @@ class PostController {
     }
     // show all post with category js
     async postsJs(req,res,next){
-        const categoryJs = await Posts.find({category : 'js'})
+        const categoryJs = await Posts.find({category : 'js'}).sort({'src': -1})
               .then(posts =>{res.render('node/index',{
                   posts: muti(posts)
               })})
@@ -39,7 +39,7 @@ class PostController {
     }
     // show all post with category css
     async postsCss(req,res,next){
-        const categoryCss = await Posts.find({category : 'css'})
+        const categoryCss = await Posts.find({category : 'css'}).sort({'src': -1})
               .then(posts =>{res.render('node/index',{
                   posts: muti(posts)
               })})
@@ -48,7 +48,7 @@ class PostController {
     }
     // show all post with category html
     async postsHtml(req,res,next){
-        const categoryHml = await Posts.find({category : 'html'})
+        const categoryHml = await Posts.find({category : 'html'}).sort({'src': -1})
               .then(posts =>{res.render('node/index',{
                   posts: muti(posts)
               })})
@@ -69,21 +69,6 @@ class PostController {
                 })
             }
             
-        // try {
-        //     const slugs = await Posts.findOne({slug: req.params.slug},function(slugs){
-        //         if(slugs === undefined){
-        //            return res.send('duong')
-        //         }                                    
-        //     })
-        //     .then(post => res.render('aboutme/showDetail',{
-        //         post: one(post),
-                
-        //     }))
-        //     .catch(next);
-                
-        // } catch (error) {
-        //     res.json(error)
-        // }
         
     }
 
@@ -133,6 +118,14 @@ class PostController {
            .then(()=> res.redirect('/'))
            .catch(next)        
        }
+
+    // show one page
+    showone(req, res){
+        res.render('detail/test',{
+            title:'this is one page',
+            mieuta: 'this is description'
+        })
+    }
 }
 
 

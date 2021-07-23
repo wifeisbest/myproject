@@ -9,7 +9,7 @@ const path               = require('path');
 const methodOverride     = require('method-override');
 const morgan             = require('morgan');
 const cookieParser       = require('cookie-parser') ;  
-
+const helmet             = require('helmet');
 // ============== =============\\
 
 app.engine('.hbs',hdbs({
@@ -17,6 +17,7 @@ app.engine('.hbs',hdbs({
 }));
 app.set('view engine','.hbs');
 app.set('views',path.join(__dirname, 'resourse','views'));
+app.use(helmet());
 app.use(methodOverride('_method'));
 app.use(express.json());
 app.use(cookieParser());
@@ -25,7 +26,7 @@ app.use(morgan('combined'));
 app.use(express.urlencoded({
     extended: true
 }));
-
+app.disable('X-Powered-By');
 
 // =========== Require local file================\\
 
@@ -39,3 +40,4 @@ db.connect();
 
 
 app.listen(port, ()=> console.log(`App listent${port}`));
+
