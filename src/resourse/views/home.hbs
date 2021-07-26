@@ -1,13 +1,15 @@
 
-<a href="https://laptrinhcuocsong.com/"> blog được thiết kế theo mẫu website laptrinhcuocsong.com</a>
-<section class="section">    
+
+<h4>Blog được thiết kế theo mẫu <a href="https://laptrinhcuocsong.com/">laptrinhcuocsong.com</a> </h4>
+
+<section>    
     {{#each posts}}
-     <article class="section__article">
-            <a href="/{{this.slug}}"  >
-                <h1 class="section__title"> {{this.title}} </h1>
-                <div class="section__wrap">                                                                                                                     
+     <article class="section__article" itemscope itemtype="http://schema.org/Article">
+            <a itemprop="url" href="/{{this.slug}}" title="{{this.title}}" >
+                <h1 class="section__title" itemprop="name"> {{this.title}} </h1>
+                <div class="section__wrap" itemprop="description">                                                                                                                     
                     <p class="section__description"> 
-                        <img src="/img/{{this.src}}.png" class="section__img" alt="">{{this.description}}
+                        <img itemprop="image" title="{{this.title}}" src="/img/{{this.src}}.png" class="section__img" alt="{{this.title}}">{{this.description}}
                     </p>                   
                 </div>                                
             </a>

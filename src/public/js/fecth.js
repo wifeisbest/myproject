@@ -19,7 +19,7 @@
 
         if(result){
             
-           setCookie('token', result.data)
+           setCookie('token', result.data,2)
            window.location.href = "/";
         }        
     }

@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700;900&display=swap" rel="stylesheet">
-                
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-
+    <title>{{title}}</title>
     <link rel="shortcut icon"  href="/img/favicon.png">
     <link rel="icon" type="image/gif" href="/img/favicon.png">
 
+    <meta content="index, follow" name="robots">
+
+    <meta content="text/html ; charset=UTF-8" http-equiv="Content-Type">
+    <meta name="description" content="Lập trình website, blog cơ bản nhất cho người mới bắt đầu,chi tiết từ Z đến A">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700;900&display=swap" rel="stylesheet">              
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+    <meta property="og:description" content="Lập trình website, blog cơ bản nhất cho người mới bắt đầu,chi tiết từ Z đến A">
+    <meta property="og:type" content="Article">
+    <meta property="og:title" content="{{title}}">
+
     <link rel="stylesheet" href="/css/main.css" > 
     <link rel="stylesheet" href="/css/{{style}}" > 
-    <title>{{title}}</title>
+    
     
 </head>
 <body>
@@ -41,12 +48,10 @@
     <div class="banner">
         <a href="/" class="banner_link">
             <h1 class="banner__heading">
-            
                 Blog Của 1 Người Tay Ngang 
             <span class="banner__heading-description">
                 Là nơi tôi chia sẻ mọi thứ tôi biết để làm nên blog này
-            </span>
-            
+            </span>          
         </h1>
         </a>
     </div>
@@ -56,14 +61,7 @@
         </section>
         
     </main>
-    <footer class="footer">
-        <p class="footer__title">XYZABC</p>
-
-        <div class="footer__social">
-            <a href="#" class="footer__icon"><i class='bx bx-mail-send' ></i></a>
-        </div>
-        <p>&#169; 2021 copyright all reserved</p>
-    </footer>
+    {{> footer }}
     <script src="/js/main.js"></script>
     
 </body>

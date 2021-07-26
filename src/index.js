@@ -12,22 +12,24 @@ const cookieParser       = require('cookie-parser') ;
 const helmet             = require('helmet');
 // ============== =============\\
 
-app.engine('.hbs',hdbs({
-    extname: '.hbs'  
-}));
-app.set('view engine','.hbs');
-app.set('views',path.join(__dirname, 'resourse','views'));
+
 app.use(helmet());
 app.use(methodOverride('_method'));
 app.use(express.json());
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname,'public')));
+
 app.use(morgan('combined'));
 app.use(express.urlencoded({
     extended: true
 }));
 app.disable('X-Powered-By');
+app.engine('.hbs',hdbs({
+    extname: '.hbs'
+}));
 
+app.set('view engine','.hbs');
+app.set('views',path.join(__dirname, 'resourse','views'));
+app.use(express.static(path.join(__dirname,'public')));
 // =========== Require local file================\\
 
 const Router = require('./routers')

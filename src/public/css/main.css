@@ -3,7 +3,7 @@
     --header-height: 3.5rem;
     --font-semi: 600;
     --font-medium: 700;
-    --second-color: rgb(226, 14, 14);
+    --second-color: #e00000;
     --three-color: #3d3c3c;
     --body-font : 'Roboto Slab', serif;
     --big-fontsize : 2rem;
@@ -56,11 +56,9 @@ a{
 }
 
 /* class css */
-.section{
-    margin-top: var(--mb-6);
-}
+
 .section__title{
-    padding-top: var(--mb-3);
+    
     font-size: 27px;
     color: #222222;
 }
@@ -69,11 +67,12 @@ a{
     opacity: 0.8;
 }
 .section__article{  
-    border-bottom: 1px dashed #d1cccc;  
+    border-bottom: 1px dashed #dad8d8; 
+    margin-bottom: 24px; 
 }
 .section__wrap{
     padding: var(--mb-4) 0;
-    margin: var(--mb-2) 0;
+   
 }
 .section__description{
     display: flex;
@@ -85,8 +84,7 @@ a{
 .section__img{
     width: 140px;
     margin-right: var(--mb-4);
-    border-radius: var(--mb-1);
-    
+    border-radius: var(--mb-1); 
 }
 
 
@@ -174,7 +172,8 @@ a{
 
 /* footer */
 .footer__title{
-    font-size: 2rem;
+    font-size: 1.5rem;
+    
 }
 .footer__icon{
     font-size: 1.5rem;
@@ -193,6 +192,9 @@ a{
     font-weight: var(--font-semi);
     padding: 1rem 0;
     margin-top: var(--mb-6);
+}
+.footer__title a{
+    color: var(--second-color);
 }
 
 

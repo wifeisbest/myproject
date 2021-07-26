@@ -2,12 +2,12 @@
 
 <section class="section">    
     {{#each posts}}
-     <article class="section__article">
-            <a href="/{{this.slug}}"  >
-                <h1 class="section__title marginTop"> {{this.title}} </h1>
-                <div class="section__wrap">                                                                                                                     
+     <article class="section__article" itemscope itemtype="http://schema.org/Article">
+            <a itemprop="url" href="/{{this.slug}}" title="{{this.title}}" >
+                <h1 class="section__title" itemprop="name"> {{this.title}} </h1>
+                <div class="section__wrap" itemprop="description">                                                                                                                     
                     <p class="section__description"> 
-                        <img src="/img/{{this.src}}.png" class="section__img" alt="">{{this.description}}
+                        <img itemprop="image" title="{{this.title}}" src="/img/{{this.src}}.png" class="section__img" alt="{{this.title}}">{{this.description}}
                     </p>                   
                 </div>                                
             </a>

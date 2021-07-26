@@ -10,6 +10,7 @@ const Atical = new Schema({
     description: { type: String  },
     src: { type: String  },
     category: {type: String},
+    stt : {type : Number},
     slug: { type :String, slug: 'title', unique: true}
   },{
     timestamps: true,

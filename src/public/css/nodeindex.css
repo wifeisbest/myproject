@@ -1,0 +1,16 @@
+.section{
+    margin-top: 99px;
+}
+@media screen and (max-width : 768px){
+  .section{
+      margin-top: 0px;
+  }  
+  .section__wrap{
+    padding: 0;
+  }
+  .section__title {
+    padding-top: var(--mb-1);
+    
+  } 
+}
+    

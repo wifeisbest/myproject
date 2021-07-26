@@ -11,6 +11,7 @@ class Admin {
     }
     adminLogin(req, res, next){
         res.render('admin/login',{
+            title: 'Admin login',
             style: 'admin.css'
         })
     }

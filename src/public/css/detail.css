@@ -1,0 +1,106 @@
+
+.detail{
+    margin-top: 101px;
+}
+.detail__h1{
+    margin-bottom: var(--mb-4);
+    font-size: var(--mb-6);
+}
+p{
+    line-height: 35px;
+    font-size: 20px;
+    color: #131313;
+    font-weight: 300;
+    padding-bottom:  var(--mb-3) ;
+}
+p img {
+    width: 750px;
+    border-radius: 8px;
+    height: 400px;
+    margin: var(--mb-2) 0;
+}
+.hightline{
+    color: #ef0000;;
+    background-color: rgba(199, 61, 61, 0.521);
+    font-weight: 500;
+    font-size: 16px;
+}
+h2{
+    padding-bottom: var(--mb-3);
+    border-bottom: 1px dashed #dad8d8;
+    margin-bottom: 16px;
+    
+}
+.tag{
+    display: flex;
+    border-bottom: 1px dashed #dad8d8;
+    margin-bottom: 22px;
+    padding-bottom: var(--mb-3);
+    font-size: 15px;
+}
+.tag a{
+    padding-left: var(--mb-3);
+    color: #ef0000;
+}
+.relative__post{
+    display: flex;
+}
+.relative__post li a img{ 
+    height: 165px;
+    border-radius: 16px;
+}
+
+.relative__description{
+    font-size: 16px;
+    line-height: 26px;
+}
+.relative__post-item{
+    padding: 0 13px;
+    text-align: center;
+}
+@media screen and (max-width : 768px){
+    .detail{
+        margin-top: 0;
+    }
+    .detail__h1{
+        margin-bottom: var(--mb-2);
+        font-size: var(--mb-3);
+    }
+    p{
+        line-height: 27px;
+        font-size: 16px;
+        color: #131313;
+        font-weight: 300;
+        padding-bottom:  var(--mb-2) ;
+    }
+    p img {        
+        border-radius: 8px;
+        height: 250px;
+        margin: var(--mb-2) 0;
+    }
+    .relative__post{       
+        flex-wrap: wrap;
+        flex-direction: row;
+    } 
+    .relative__post li a{        
+        font-size: 14px;
+        line-height: 20px;
+        flex-shrink: 0;
+    }
+    .relative__post li a img{
+        height: 50px;
+        width: 50px;
+    }
+    .relative__post-item{
+        display: flex;
+        align-items: center;
+        padding: 8px 0;
+
+    }
+    .relative__description{
+        padding-right: 8px;
+    } 
+    .relative__post li h3{
+        padding-left: 8px;
+    }  
+}

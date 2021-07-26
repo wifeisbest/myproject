@@ -1,19 +1,20 @@
-const express = require('express');
-const router = express.Router();
+const express    = require('express');
+const router     = express.Router();
+const veryfy     = require('../midleware/veryfyToken')
+const posts      = require('../app/controllers/postsController');
 
-const posts = require('../app/controllers/postsController');
-const guest = require('../app/controllers/Guest');
 
 
-router.get('/aboutme',guest.aboutme);
-// show one page
-router.get('/sorting-trong-mongodb',posts.showone)
 
+// show detal one page
+
+// nodejs
+router.get('/hello-world-nodejs',posts.helloNodejs)
 
 
 
  
-router.get('/createPost', posts.createPost);
+router.get('/createPost',veryfy,posts.createPost);
 router.get('/node', posts.postsNode);
 router.get('/javascript', posts.postsJs);
 router.get('/html', posts.postsHtml);
