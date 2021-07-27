@@ -67,6 +67,20 @@ class PostController {
               .catch(next)
         
     }
+    // outline 
+    async outline(req,res,next){
+        const categoryOutline = await Posts.find({category : 'outline'}).sort({'stt': 1})
+              .then(posts =>{res.render('node/index',{
+                posts: muti(posts),
+                style: 'nodeindex.css',
+                title : 'Chuyện bên lề',
+                mieuta : 'Các kiến thức cơ bản ngoài HTML, Nodejs, Javascript Css, HTML mà ai cũng nên biết',
+              })})
+              .catch(next)
+        
+    }
+    
+
     async showDetail(req, res, next){  
         const post = await Posts.findOne({slug: req.params.slug})
             if(post === null){
